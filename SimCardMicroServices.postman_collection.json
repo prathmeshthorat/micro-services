@@ -1,0 +1,146 @@
+{
+	"info": {
+		"_postman_id": "1776ac8a-a089-4ae6-b8d9-f7fa85835a7e",
+		"name": "SimCardMicroServices",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8081/api/customer/get/2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/api/customer/get/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"customer",
+						"get",
+						"2"
+					]
+				},
+				"description": "Get Customer"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8081/api/customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"customer\":{\r\n        \"firstName\": \"Casanova\",\r\n        \"lastName\": \"System\",\r\n        \"age\": 24,\r\n        \"email\": \"Casanova@gamil.com\",\r\n        \"govIdType\": \"Aadhar\",\r\n        \"govIdNumber\": \"123456789012\",\r\n        \"serviceNumber\": 9087645312,\r\n        \"password\": \"Dummy@12\"\r\n    },\r\n    \"address\": {\r\n        \"addressId\": 2,\r\n        \"firstLine\": \"Addr Line1\",\r\n        \"secondLine\": \"Addr Line2\",\r\n        \"city\": \" City\",\r\n        \"state\": \"State\",\r\n        \"pinCode\": 416216\r\n\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/api/customer/complete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"api",
+						"customer",
+						"complete"
+					]
+				},
+				"description": "Post Customer"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/api/simcard",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"serviceNumber\": 9009009001,\r\n    \"isActive\": false,\r\n    \"state\": \"State\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/simcard",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"simcard"
+					]
+				},
+				"description": "create Sim cards"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8082/api/simcard/activate/7fc05f4c-ae1e-478e-ac90-7e99d2b99eb0/serviceNumber/9009009001",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"simUID\": \"aaa111\",\r\n    \"customerId\": 1,\r\n    \"serviceNumber\": 9009009001\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/simcard/activate",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"simcard",
+						"activate"
+					]
+				},
+				"description": "activate sim"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9191/api/simcard/get/2",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9191/api/simcard/get/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9191",
+					"path": [
+						"api",
+						"simcard",
+						"get",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
